@@ -1,5 +1,6 @@
 package com.example.rv3.security.services;
 
+import com.example.rv3.domain.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,17 +29,17 @@ public class UserDetailsImpl implements UserDetails {
         this.password = password;
         this.authorities = authorities;
     }
-    public static UserDetailsImpl build(User user) {
+    /*public static UserDetailsImpl build(Usuario user) {
         List<GrantedAuthority> authorities = user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName().name()))
                 .collect(Collectors.toList());
         return new UserDetailsImpl(
                 user.getId(),
-                user.getUsername(),
-                user.getEmail(),
-                user.getPasswd(),
+                user.getDNI(),
+                user.getNombreUsuario(),
+                user.getCorreo(),
                 authorities);
-    }
+    }*/
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;

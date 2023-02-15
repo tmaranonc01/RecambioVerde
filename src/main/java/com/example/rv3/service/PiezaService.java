@@ -21,7 +21,7 @@ public class PiezaService extends BaseService<Pieza,Long, PiezaRepository> {
 
 
     public Page<Pieza> getPiezas(Pageable pageable, @SearchSpec Specification<Pieza> specs){
-        return piezaRepository.findAll(specs, pageable);
+        return (Page<Pieza>) piezaRepository.findAll();
     }
 
     public List<Pieza> findPiezaByCoche(Long coche_id){

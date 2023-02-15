@@ -1,7 +1,7 @@
 package com.example.rv3.security.jwt;
 
+import com.example.rv3.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

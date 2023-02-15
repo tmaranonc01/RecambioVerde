@@ -1,7 +1,6 @@
 package com.example.rv3.controller;
 
 import com.example.rv3.domain.Coche;
-import com.example.rv3.domain.Pieza;
 import com.example.rv3.service.CocheService;
 import com.sipios.springsearch.anotation.SearchSpec;
 import org.springframework.data.domain.Page;
@@ -22,7 +21,7 @@ public class CocheController {
 
     @GetMapping("/coches")
     public ResponseEntity<Page<Coche>>
-    listaCoches(@PageableDefault(size = 10, page = 0) Pageable pageable, @SearchSpec Specification<Pieza> specs){
+    listaCoches(@PageableDefault(size = 10, page = 0) Pageable pageable, @SearchSpec Specification<Coche> specs){
         Page<Coche> coches = cocheService.getCoches(pageable,specs);
         if(pageable.getPageNumber() > coches.getTotalPages()){
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);

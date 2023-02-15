@@ -1,7 +1,9 @@
 package com.example.rv3.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
+
+import java.util.Collection;
 
 @Entity
 @Getter
@@ -23,4 +25,8 @@ public class Usuario {
     @OneToOne(optional = false)
     @JoinColumn(name = "direccion_id", referencedColumnName = "id")
     private Direccion direccion;
+
+    public Collection<Object> getRoles() {
+        return null;
+    }
 }

@@ -18,8 +18,8 @@ public class PedidoService extends BaseService<Pedido, Long, PedidoRepository> {
     private UsuarioRepository usuarioRepository;
 
 
-    public Page<Pedido> getPedido(Pageable pageable, @SearchSpec Specification<Pedido> specs){
-        return pedidoRepository.findAll(specs, pageable);
+    public Page<Pedido> getPedidos(Pageable pageable, @SearchSpec Specification<Pedido> specs){
+        return (Page<Pedido>) pedidoRepository.findAll();
     }
 
     public Pedido addPedido(Pedido nuevoPedido){
@@ -44,4 +44,5 @@ public class PedidoService extends BaseService<Pedido, Long, PedidoRepository> {
     public List<Pedido> findPedidoByUsuario(Long usuario_id){
         return usuarioRepository.findPedidoByUsuario(usuario_id);
     }
+
 }

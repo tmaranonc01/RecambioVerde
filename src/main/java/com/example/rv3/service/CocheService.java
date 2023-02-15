@@ -17,7 +17,7 @@ public class CocheService extends BaseService<Coche,Long, CocheRepository> {
     CocheRepository cocheRepository;
 
     public Page<Coche> getCoches(Pageable pageable, @SearchSpec Specification<Coche> specs){
-        return cocheRepository.findAll(pageable, specs);
+        return (Page<Coche>) cocheRepository.findAll();
     }
 
     public List<Pieza> findAllPiezas(Long coche_id){

@@ -1,6 +1,6 @@
 package com.example.rv3.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 import java.util.List;
